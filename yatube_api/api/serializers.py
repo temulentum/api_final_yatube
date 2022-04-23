@@ -12,7 +12,6 @@ class FollowSerializer(serializers.ModelSerializer):
 
     class Meta:
         fields = '__all__'
-        #exclude = ('id',)
         model = Follow
 
         validators = [
