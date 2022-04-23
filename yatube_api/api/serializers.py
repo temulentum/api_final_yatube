@@ -5,8 +5,10 @@ from rest_framework.validators import UniqueTogetherValidator
 
 
 class FollowSerializer(serializers.ModelSerializer):
-    user = SlugRelatedField(queryset=User.objects.all(), slug_field='username', default=serializers.CurrentUserDefault())
-    following = SlugRelatedField(queryset=User.objects.all(), slug_field='username')
+    user = SlugRelatedField(queryset=User.objects.all(
+    ), slug_field='username', default=serializers.CurrentUserDefault())
+    following = SlugRelatedField(
+        queryset=User.objects.all(), slug_field='username')
 
     class Meta:
         fields = '__all__'
