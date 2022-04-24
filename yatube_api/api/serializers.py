@@ -22,9 +22,9 @@ class FollowSerializer(serializers.ModelSerializer):
         ]
 
     def validate(self, data):
-        if data['user'] == data['following']:
+        if self.context['request'].user == data['following']:
             raise serializers.ValidationError(
-                'Имя не может совпадать с цветом!')
+                'Нельзя подписаться на себя!')
         return data
 
 
