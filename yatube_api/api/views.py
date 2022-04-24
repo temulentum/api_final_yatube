@@ -10,7 +10,7 @@ from .serializers import (CommentSerializer, FollowSerializer, GroupSerializer,
                           PostSerializer)
 
 
-class ListPostViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, 
+class ListPostViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
                       viewsets.GenericViewSet):
     pass
 
